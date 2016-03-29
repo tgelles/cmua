@@ -13,10 +13,9 @@
       "main": true
     },
     "backstretch.js": {
-      "files": [
+      "vendor": [
         "scripts/jquery.backstretch.min.js"
-      ],
-      "main": true
+      ]
     },
     "customizer.js": {
       "files": [
