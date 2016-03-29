@@ -1,0 +1,39 @@
+@import "common/variables";
+
+// Automatically injected Bower dependencies via wiredep (never manually edit this block)
+// bower:scss
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+@font-face {
+  font-family: 'gentona-light';
+  src: url('../fonts/Gentona-Light.eot');
+  src: url('../fonts/Gentona-Light.eot?#iefix') format("embedded-opentype"), 
+      url('../fonts/Gentona-Light.woff') format("woff"), 
+      url('../fonts/Gentona-Light.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'gentona-bold';
+  src: url('../fonts/Gentona-Bold.eot');
+  src: url('../fonts/Gentona-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Gentona-Bold.woff') format('woff'),
+       url('../fonts/Gentona-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@import "common/global";
+@import "components/buttons";
+@import "components/comments";
+@import "components/forms";
+@import "components/grid";
+@import "components/sportspress";
+@import "components/wp-classes";
+@import "layouts/header";
+@import "layouts/sidebar";
+@import "layouts/footer";
+@import "layouts/pages";
+@import "layouts/posts";
+@import "layouts/tinymce";

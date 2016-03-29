@@ -1,0 +1,54 @@
+body {
+  font-family: $font-stack;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2rem;
+  color: $black;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+  font-family: $font-header;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.list-group-item {
+  border: none;
+  margin-bottom: 0px;
+  background-color: transparent;
+}
+
+.list-group hr {
+  border-top: 1px solid #ddd;
+  width: 75%;
+  margin: 0 auto;
+}
+
+
+.home .main {
+   padding: 0;
+}
+
+.main {
+  p, .sp-table-wrapper  {
+    padding-right: 35px;
+  }
+}
+
+ul.nav li.dropdown:hover ul.dropdown-menu { 
+display: block !important; 
+}
+
+.sidebar {
+  background:  #FBD872;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.frm_forms {
+    background: #e7e7e7;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.frm_ajax_loading{visibility:hidden;}
