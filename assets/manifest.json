@@ -12,11 +12,6 @@
       ],
       "main": true
     },
-    "backstretch.js": {
-      "vendor": [
-        "scripts/jquery.backstretch.min.js"
-      ]
-    },
     "customizer.js": {
       "files": [
         "scripts/customizer.js"
