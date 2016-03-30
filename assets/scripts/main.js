@@ -28,7 +28,6 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
-        $("#bs").backstretch(["/wp-content/themes/cmua/dist/images/slider1.jpg", "/wp-content/themes/cmua/dist/images/slider2.jpg","/app/themes/cmua/dist/images/slider4.jpg", "/app/themes/cmua/dist/images/slider5.jpg", "/app/themes/cmua/dist/images/slider6.jpg", "/app/themes/cmua/dist/images/slider7.jpg", "/app/themes/cmua/dist/images/slider8.jpg"], {duration: 4000, fade: 750});
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

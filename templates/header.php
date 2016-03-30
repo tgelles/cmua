@@ -14,7 +14,9 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-
+          <?php // Fix menu overlap bug..
+            if ( is_admin_bar_showing() ) echo '<div style="min-height: 28px;"></div>'; 
+          ?>
     <div class="collapse navbar-collapse" role="navigation">
       <?php
       if (has_nav_menu('primary_navigation')) :
