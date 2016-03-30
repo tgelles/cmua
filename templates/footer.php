@@ -4,7 +4,7 @@
     
     <p>&copy; <?php echo date("Y") ?> CMUA | Central Maryland Ultimate Association. All rights reserved. 
     	<?php if (is_user_logged_in()) : ?>
-	    <a class="pull-right btn btn-primary" href="<?php echo wp_logout_url(get_permalink()); ?>">
+	    <a class="pull-right btn btn-primary" href="<?php echo wp_logout_url( home_url() ); ?>">
 	  		<span class="fa fa-wordpress fa-lg"></span> Logout
 	  	</a>
 	<?php else : ?>
