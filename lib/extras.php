@@ -48,6 +48,6 @@ function signup_button($attrs) {
     return '<a class="btn btn-primary btn-lg" href="'.$attrs['form_url'].'">'.$attrs['new_text'].'</a>';
   }
 
-  return '<a class="btn btn-primary btn-lg" href="/login?redirect_to='.urlencode(get_permalink()).'">Create an Account/Login</a>';
+  return '<a class="btn btn-primary btn-lg" href="/wp-login?redirect_to='.urlencode(get_permalink()).'">Create an Account/Login</a>';
 }
 add_shortcode('signup_button', __NAMESPACE__ . '\\signup_button');
