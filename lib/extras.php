@@ -31,3 +31,23 @@ function excerpt_more() {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+
+
+/**
+ * Show signup button
+ */
+function signup_button($attrs) {
+  if(is_user_logged_in()) {
+    global $user_ID;
+    global $wpdb;
+    $results = $wpdb->get_results($wpdb->prepare('SELECT * FROM '.$wpdb->prefix.'frm_items WHERE user_id = %d AND form_id = %d', $user_ID, $attrs['form_id']), ARRAY_A);
+    if(!empty($results)) {
+      return '<a class="btn btn-primary btn-lg" href="'.$attrs['form_url'].'">'.$attrs['edit_text'].'</a>';
+    }
+
+    return '<a class="btn btn-primary btn-lg" href="'.$attrs['form_url'].'">'.$attrs['new_text'].'</a>';
+  }
+
+  return '<a class="btn btn-primary btn-lg" href="/login?redirect_to='.urlencode(get_permalink()).'">Create an Account/Login</a>';
+}
+add_shortcode('signup_button', __NAMESPACE__ . '\\signup_button');
