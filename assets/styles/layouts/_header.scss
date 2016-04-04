@@ -87,6 +87,9 @@
   .navbar-custom .navbar-brand:focus {
     color: rgba(255, 255, 255, 0.8);
   }
+}
+
+@media only screen and (min-width: 769px) {
   .navbar-custom .nav li a {
     color: white;
     padding: 20px;
@@ -277,6 +280,8 @@
   }
 }
 
- .site-heading.interior {
-      padding-bottom: 50px;
-  }
+.site-heading.interior {
+    padding-bottom: 50px;
+}
+
+.admin-bar .navbar-fixed-top { top:46px; @media screen and (min-width:782px) { top:32px; } }
