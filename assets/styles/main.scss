@@ -15,6 +15,14 @@
 }
 
 @font-face {
+  font-family: 'gentona-book';
+  src: url('../fonts/Gentona-book.eot');
+  src: url('../fonts/Gentona-book.eot?#iefix') format("embedded-opentype"), 
+      url('../fonts/Gentona-book.woff') format("woff"), 
+      url('../fonts/Gentona-book.ttf') format("truetype");
+}
+
+@font-face {
   font-family: 'gentona-bold';
   src: url('../fonts/Gentona-Bold.eot');
   src: url('../fonts/Gentona-Bold.eot?#iefix') format('embedded-opentype'),

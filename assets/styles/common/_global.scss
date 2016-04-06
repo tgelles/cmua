@@ -40,9 +40,9 @@ b, strong {
   }
 }
 
-ul.nav li.dropdown:hover ul.dropdown-menu { 
+/*ul.nav li.dropdown:hover ul.dropdown-menu { 
 display: block !important; 
-}
+}*/
 
 .sidebar {
   background:  #FBD872;
@@ -71,4 +71,28 @@ padding: 15px;
 
 #foot .btn {
     margin-right: 10px;
+}
+
+.posts-nav {
+  float: right;
+  margin: 10px 0;
+  a {
+    text-transform: capitalize;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.pager {
+  .next > {
+    a, span {
+      float: left;
+    }
+  }
+  .previous > {
+    a, span {
+      float: right;
+    }
+  }
 }
