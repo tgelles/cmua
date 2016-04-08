@@ -53,6 +53,17 @@ use Roots\Sage\Wrapper;
     <div class="wrap container margin-bottom-2" role="document">
       <div class="content row ">
         <main class="main">
+          <?php if (!is_front_page()) : ?> 
+
+            <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+                <?php if(function_exists('bcn_display') && !is_front_page())
+                {
+                    bcn_display();
+                }?>
+            </div>
+
+          <?php endif; ?>
+
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
         <?php if (Setup\display_sidebar()) : ?>
