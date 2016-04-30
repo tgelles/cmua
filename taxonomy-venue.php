@@ -13,6 +13,3 @@
   echo term_description();
 
 ?>
-
-
-<?php the_posts_navigation(); ?>
