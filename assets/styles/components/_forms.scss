@@ -13,3 +13,9 @@
   @extend .btn;
   @extend .btn-default;
 }
+
+input#field_cost {
+	background: white;
+	color: $brand-primary;
+	font-family: $font-header;
+}
