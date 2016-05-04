@@ -19,11 +19,51 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
-      },
-      finalize: function() {
-        // JavaScript to be fired on all pages, after page specific JS is fired
-      }
-    },
+         var LEAGUE_COSTS = {"Monday Night Advanced" : 30, "Men's League" : 10, "Wednesday Night Recreational" : 15};
+         function update_cost() {
+             var total = 0;
+             var did_check = false;
+             var leagues = [];
+             $('input[name="item_meta[127][]"]').each(function() {
+                 if (this.checked) {
+                     if ((this.value === "Women's Advanced League" ||
+                                        this.value === "Women's Rec League")) {
+                                            if (!did_check) {
+                                                total += 10;
+                                                leagues.push("Women's League");
+                                                did_check = true;
+                                            }
+                     } else {
+                         leagues.push(this.value);
+                         total += LEAGUE_COSTS[this.value];
+                     }
+                 }
+             });
+             var disc_val = $('input[name="item_meta[154]"]:checked');
+             if (disc_val.val() === 'Yes') {
+                 leagues.push("CMUA Disc");
+                 total += 10;
+             }
+             
+             leagues.push("Lights fee");
+             total += 5;
+             var description = leagues.join(", ");
+             $('#field_hidden_cost').val(total);
+             $('#field_hidden_description').val(description);
+             $('#field_cost').val('$' + total + ' (' + description + ')');
+         }
+         update_cost();
+         $('input[name="item_meta[127][]"]').change(function() {
+             update_cost();
+         });
+         $('input[name="item_meta[154]"]').change(function(){
+             update_cost();
+         });
+          },
+          finalize: function() {
+            // JavaScript to be fired on all pages, after page specific JS is fired
+          }
+        },
     // Home page
     'home': {
       init: function() {
