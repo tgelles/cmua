@@ -32,15 +32,13 @@ jQuery(document).ready(function($){
         }
         total = total + women_total;
         items = items_array.join(', ');
-        $("#dynamic_content2").html('<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"> <input type="hidden" name="cmd" value="_xclick"> <input type="hidden" name="business" value="CRPC.pp@gmail.com"> <input type="hidden" name="currency_code" value="USD"> <input type="hidden" name="item_name" value="' + items + '"> <input type="hidden" name="amount" value="' + total + '"> <input type="hidden" name="return" value="http://cmuadisc.org/summer-league-finish-registration"> <input type="hidden" name="cancel_return" value="http://cmuadisc.org/summer-league-finish-registration"> <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it is fast, free and secure!"> </form>');
+        $("#dynamic_content").html('<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"> <input type="hidden" name="cmd" value="_xclick"> <input type="hidden" name="business" value="CRPC.pp@gmail.com"> <input type="hidden" name="currency_code" value="USD"> <input type="hidden" name="item_name" value="' + items + '"> <input type="hidden" name="amount" value="' + total + '"> <input type="hidden" name="return" value="http://cmuadisc.org/summer-league-finish-registration"> <input type="hidden" name="cancel_return" value="http://cmuadisc.org/summer-league-finish-registration"> <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it is fast, free and secure!"> </form>');
         $("#optional_cost").html(total);
     }
 
     $('.opt_check').change(function() {
         set_optional_paypal();
     });
-    
-    $("#dynamic_content").html('<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"> <input type="hidden" name="cmd" value="_xclick"> <input type="hidden" name="business" value="CRPC.pp@gmail.com"> <input type="hidden" name="currency_code" value="USD"> <input type="hidden" name="item_name" value="' + $("#description").html() + '"> <input type="hidden" name="amount" value="' + $("#cost").html() + '"> <input type="hidden" name="return" value="http://cmuadisc.org/summer-league-finish-registration"> <input type="hidden" name="cancel_return" value="http://cmuadisc.org/summer-league-finish-registration"> <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it is fast, free and secure!"> </form>');
     
     <?php
     foreach ( explode(", ", FrmProEntriesController::get_field_value_shortcode(array('field_id' => 127, 'user_id' => 'current'))) as $val) {
