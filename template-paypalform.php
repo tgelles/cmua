@@ -32,7 +32,9 @@ jQuery(document).ready(function($){
         }
         total = total + women_total;
         items = items_array.join(', ');
-        $("#dynamic_content").html('<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"> <input type="hidden" name="cmd" value="_xclick"> <input type="hidden" name="business" value="CRPC.pp@gmail.com"> <input type="hidden" name="currency_code" value="USD"> <input type="hidden" name="item_name" value="' + items + '"> <input type="hidden" name="amount" value="' + total + '"> <input type="hidden" name="return" value="http://cmuadisc.org/summer-league-finish-registration"> <input type="hidden" name="cancel_return" value="http://cmuadisc.org/summer-league-finish-registration"> <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it is fast, free and secure!"> </form>');
+        user_id = $('#user_id').html();
+        for_name = $('#field_name').val();
+        $("#dynamic_content").html('<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"> <input type="hidden" name="cmd" value="_xclick"> <input type="hidden" name="business" value="CRPC.pp@gmail.com"> <input type="hidden" name="currency_code" value="USD"> <input type="hidden" name="item_name" value="' + user_id + ' for: ' + for_name + ' : ' + items + '"> <input type="hidden" name="amount" value="' + total + '"> <input type="hidden" name="return" value="http://cmuadisc.org/summer-league-finish-registration"> <input type="hidden" name="cancel_return" value="http://cmuadisc.org/summer-league-finish-registration"> <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it is fast, free and secure!"> </form>');
         $("#optional_cost").html(total);
     }
 
@@ -62,6 +64,19 @@ jQuery(document).ready(function($){
         echo ("$('#disc').prop('checked', true);");
     }
     echo ("$('#lights').prop('checked', true);");
+    $first_name=FrmProEntriesController::get_field_value_shortcode(array('field_id'=>84,'user_id'=>'current'));
+    $last_name=FrmProEntriesController::get_field_value_shortcode(array('field_id'=>85,'user_id'=>'current'));
+    $user_id=FrmProEntriesController::get_field_value_shortcode(array('field_id'=>121,'user_id'=>'current'));
+    echo ("$('#user_id').html('$user_id');");
+    if (strlen($user_id) == 0) {
+        echo ("$('#not_signed_in').show();");
+        echo ("$('#signed_in').hide();");
+    } else {
+        echo ("$('#not_signed_in').hide();");
+        echo ("$('#signed_in').show();");
+    }
+    $player_name="$first_name $last_name";
+    echo ("$('#field_name').val('$player_name');");
     ?>
 
     set_optional_paypal();
