@@ -11,4 +11,7 @@
   <div class="entry-summary">
     <?php the_content(); ?>
   </div>
+  <?php if (!is_sticky()) :?>
+    <hr>
+  <?php endif;?>
 </article>
