@@ -51,13 +51,31 @@
              $('#field_hidden_cost').val(total);
              $('#field_hidden_description').val(description);
              $('#field_cost').val('$' + total + ' (' + description + ')');
-         }
-         update_cost();
+	 }
+	  function update_wildwood_cost() {
+	      var total=10;
+	      var leagues = ["4v4 Wildwood League"];
+	      var disc_val = $('input[name="item_meta[197]"]:checked');
+              if (disc_val.val() === 'Yes') {
+                  leagues.push("CMUA Disc");
+                  total += 10;
+              }
+	      var description = leagues.join(", ");
+              $('#field_hidden_cost2').val(total);
+              $('#field_hidden_description2').val(description);
+              $('#field_cost2').val('$' + total + ' (' + description + ')');
+	  }
+
+          update_cost();
+	  update_wildwood_cost();
          $('input[name="item_meta[127][]"]').change(function() {
              update_cost();
          });
          $('input[name="item_meta[154]"]').change(function(){
              update_cost();
+         });
+	  $('input[name="item_meta[197]"]').change(function(){
+             update_wildwood_cost();
          });
           },
           finalize: function() {
