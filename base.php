@@ -22,9 +22,9 @@ use Roots\Sage\Wrapper;
 
 
     <?php if (is_front_page()) : ?>      
-      <header class="intro-header" style="background-image: url('/wp-content/themes/cmua/dist/images/slider9.JPG'); background-position-y: 0%;">
+      <header class="intro-header" style="background-image: url('/wp-content/themes/cmua/dist/images/slider9.jpg'); background-position-y: 0%;">
     <?php else :?>
-      <header class="intro-header" style="background-image: url('/wp-content/themes/cmua/dist/images/slider12.JPG');">
+      <header class="intro-header" style="background-image: url('/wp-content/themes/cmua/dist/images/slider12.jpg');">
     <?php endif; ?>           
         <div class="container">
             <div class="row">
