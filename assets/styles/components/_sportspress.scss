@@ -7,3 +7,26 @@
 		font-size: 16px;
 	}
 }
+
+table#DataTables_Table_1 {
+  .sp-row-no-0, .sp-row-no-1, .sp-row-no-2, .sp-row-no-3 {
+    background: rgba(252, 214, 2, 1);
+  }
+  .sp-row-no-4, .sp-row-no-5, .sp-row-no-6, .sp-row-no-7 {
+    background: rgba(252, 214, 2, 0.5);
+  }
+  .sp-row-no-8, .sp-row-no-9 {
+    background: rgba(252, 214, 2, 0.25);
+  }
+}
+
+th.data-rank.sorting {
+  width: 5%;
+}
+
+.sp-data-table {
+  .data-number, .data-rank {
+    width: 1px;
+    padding-left: 1rem;
+  }
+}
